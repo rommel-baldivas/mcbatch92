@@ -1,8 +1,15 @@
-import React from "react";
-import { render } from "react-dom";
-import Gallery from "react-photo-gallery";
-import { photos } from "./photos";
+import * as React from 'react';
+import ReactDOM from 'react-dom';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
+import App from './App';
+import theme from './theme';
 
-/* popout the browser and maximize to see more rows! -> */
-const BasicRows = () => <Gallery photos={photos} />;
-render(<BasicRows />, document.getElementById("app"));
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+    <CssBaseline />
+    <App />
+  </ThemeProvider>,
+  document.querySelector('#root'),
+);
